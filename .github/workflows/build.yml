@@ -25,10 +25,9 @@ jobs:
         with:
           name: AIKeyboard-apk
           path: app/build/outputs/apk/debug/*.apk
-      - name: Rilis APK
+      - name: Buat Release (untuk Cek update di app)
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: build-${{ github.run_number }}
+          tag_name: v${{ github.run_number }}
           name: AI Keyboard build ${{ github.run_number }}
-          make_latest: true
           files: app/build/outputs/apk/debug/*.apk
